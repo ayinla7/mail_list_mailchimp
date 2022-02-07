@@ -44,7 +44,6 @@ app.post("/",function(req,res){
   }
 
 const request = https.request(url, options, function(response){
-
   if (response.statusCode === 200){
 
     response.on("data", function(data){
@@ -62,13 +61,11 @@ request.end();
 
 });
 
-
 app.post("/retry", function(req, res){
   res.redirect('/');
 });
 
-
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT, function(){
   console.log("Server is working");
 });
 
